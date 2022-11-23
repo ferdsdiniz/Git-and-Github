@@ -8,17 +8,17 @@ class UsuarioDAO{
             $sql = "INSERT INTO pedala_ai_user (pedala_ai_user, pedala_ai_nome, pedala_ai_data_nasc, pedala_ai_email, pedala_ai_telefone, pedala_ai_tipo_sangue, pedala_ai_alergias, pedala_ai_contato_emer, pedala_ai_convenio, pedala_ai_medicacoes, pedala_ai_password) 
             VALUES (:pedala_ai_user, :pedala_ai_nome, :pedala_ai_data_nasc, :pedala_ai_email, :pedala_ai_telefone, :pedala_ai_tipo_sangue, :pedala_ai_alergias, :pedala_ai_contato_emer, :pedala_ai_convenio, :pedala_ai_medicacoes, :pedala_ai_password)";
             $p_sql = Conexao::getConexao()->prepare($sql);
-            $p_sql-> bindValue(":pedala_ai_user", $user->getUser());
-            $p_sql-> bindValue(":pedala_ai_nome", $user->getNome());
-            $p_sql-> bindValue(":pedala_ai_data_nasc", $user->getData_nasc());
-            $p_sql-> bindValue(":pedala_ai_email", $user->getEmail());
-            $p_sql-> bindValue(":pedala_ai_telefone", $user->getTelefone());
-            $p_sql-> bindValue(":pedala_ai_tipo_sangue", $user->getTipo_sangue());
-            $p_sql-> bindValue(":pedala_ai_alergias", $user->getAlergias());
-            $p_sql-> bindValue(":pedala_ai_contato_emer", $user->getContato_emer());
-            $p_sql-> bindValue(":pedala_ai_convenio", $user->getConvenio());
-            $p_sql-> bindValue(":pedala_ai_medicacoes", $user->getMedicacoes());
-            $p_sql-> bindValue(":pedala_ai_password", $user->getPassword());
+            $p_sql->bindValue(":pedala_ai_user", $user->getUser());
+            $p_sql->bindValue(":pedala_ai_nome", $user->getNome());
+            $p_sql->bindValue(":pedala_ai_data_nasc", $user->getData_nasc());
+            $p_sql->bindValue(":pedala_ai_email", $user->getEmail());
+            $p_sql->bindValue(":pedala_ai_telefone", $user->getTelefone());
+            $p_sql->bindValue(":pedala_ai_tipo_sangue", $user->getTipo_sangue());
+            $p_sql->bindValue(":pedala_ai_alergias", $user->getAlergias());
+            $p_sql->bindValue(":pedala_ai_contato_emer", $user->getContato_emer());
+            $p_sql->bindValue(":pedala_ai_convenio", $user->getConvenio());
+            $p_sql->bindValue(":pedala_ai_medicacoes", $user->getMedicacoes());
+            $p_sql->bindValue(":pedala_ai_password", $user->getPassword());
 
             return $p_sql->execute();
         }
@@ -63,19 +63,20 @@ class UsuarioDAO{
 
             WHERE pedala_ai_id = :pedala_ai_id";
             $p_sql = Conexao::getConexao()->prepare($sql);
-            $p_sql-> bindValue(":pedala_ai_user", $user->getUser());
-            $p_sql-> bindValue(":pedala_ai_nome", $user->getNome());
-            $p_sql-> bindValue(":pedala_ai_data_nasc", $user->getData_nasc());
-            $p_sql-> bindValue(":pedala_ai_email", $user->getEmail());
-            $p_sql-> bindValue(":pedala_ai_telefone", $user->getTelefone());
-            $p_sql-> bindValue(":pedala_ai_tipo_sangue", $user->getTipo_sangue());
-            $p_sql-> bindValue(":pedala_ai_alergias", $user->getAlergias());
-            $p_sql-> bindValue(":pedala_ai_contato_emer", $user->getContato_emer());
-            $p_sql-> bindValue(":pedala_ai_convenio", $user->getConvenio());
-            $p_sql-> bindValue(":pedala_ai_medicacoes", $user->getMedicacoes());
-            $p_sql-> bindValue(":pedala_ai_password", $user->getPassword());
+            $p_sql->bindValue(":pedala_ai_user", $user->getUser());
+            $p_sql->bindValue(":pedala_ai_nome", $user->getNome());
+            $p_sql->bindValue(":pedala_ai_data_nasc", $user->getData_nasc());
+            $p_sql->bindValue(":pedala_ai_email", $user->getEmail());
+            $p_sql->bindValue(":pedala_ai_telefone", $user->getTelefone());
+            $p_sql->bindValue(":pedala_ai_tipo_sangue", $user->getTipo_sangue());
+            $p_sql->bindValue(":pedala_ai_alergias", $user->getAlergias());
+            $p_sql->bindValue(":pedala_ai_contato_emer", $user->getContato_emer());
+            $p_sql->bindValue(":pedala_ai_convenio", $user->getConvenio());
+            $p_sql->bindValue(":pedala_ai_medicacoes", $user->getMedicacoes());
+            $p_sql->bindValue(":pedala_ai_password", $user->getPassword());
             $p_sql->bindValue(":pedala_ai_id", $user->getId());
             return $p_sql->execute();
+            
         }
         catch(Exception $e){
             print 'Erro ao atualizar usuário.<br>'. $e . '<br>';
